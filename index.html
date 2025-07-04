@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stop Losing Leads to Manual Follow-Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #00d4aa 0%, #00b894 50%, #fdcb6e 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .hero-content {
+            color: white;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+        
+        .pain-point {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .dashboard-mockup {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            transform: rotate(-5deg);
+            max-width: 400px;
+            position: relative;
+        }
+        
+        .mockup-header {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .dot.red { background: #ff5f56; }
+        .dot.yellow { background: #ffbd2e; }
+        .dot.green { background: #27ca3f; }
+        
+        .mockup-content {
+            color: #333;
+        }
+        
+        .stat-box {
+            background: #00d4aa;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .trust-section {
+            background: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .trust-title {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .trust-logos {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .trust-logo {
+            padding: 10px 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            font-weight: 600;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .features-section {
+            background: #f8f9fa;
+            padding: 100px 20px;
+        }
+        
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .features-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #2d3748;
+        }
+        
+        .features-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            text-align: left;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #00d4aa, #00b894);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #2d3748;
+        }
+        
+        .feature-description {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            padding: 100px 20px;
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .cta-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .email-form {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .form-title {
+            color: #2d3748;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .email-input {
+            width: 100%;
+            padding: 18px 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+        
+        .email-input:focus {
+            outline: none;
+            border-color: #00d4aa;
+        }
+        
+        .cta-button {
+            width: 100%;
+            background: linear-gradient(135deg, #00d4aa, #00b894);
+            color: white;
+            padding: 18px 30px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: none;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 212, 170, 0.3);
+        }
+        
+        .footer {
+            background: #1a202c;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .footer-text {
+            opacity: 0.7;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .trust-logos {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .cta-container > div {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Stop Losing Leads to Manual Follow-Up</h1>
+                <p class="hero-subtitle">AI-powered real estate automation that converts leads while you sleep. No more missed opportunities.</p>
+                
+                <div class="pain-point">
+                    <p><strong>Sound familiar?</strong> You get a lead at 9 PM, think "I'll follow up tomorrow," and by morning they've already signed with someone else.</p>
+                </div>
+                
+                <p class="hero-subtitle">Let's fix that. Forever.</p>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="dashboard-mockup">
+                    <div class="mockup-header">
+                        <div class="dot red"></div>
+                        <div class="dot yellow"></div>
+                        <div class="dot green"></div>
+                    </div>
+                    <div class="mockup-content">
+                        <h3>Lead Automation Dashboard</h3>
+                        <div class="stat-box">
+                            <div class="stat-number">247%</div>
+                            <div>Response Rate Increase</div>
+                        </div>
+                        <div style="margin: 20px 0;">
+                            <div style="background: #e2e8f0; height: 8px; border-radius: 4px; margin: 8px 0;"></div>
+                            <div style="background: #00d4aa; height: 8px; border-radius: 4px; width: 75%; margin: 8px 0;"></div>
+                            <div style="background: #e2e8f0; height: 8px; border-radius: 4px; margin: 8px 0;"></div>
+                        </div>
+                        <p style="font-size: 0.9rem; color: #666;">24/7 automated lead nurturing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Trust Section -->
+    <div class="trust-section">
+        <div class="trust-title">Trusted by 1000+ Real Estate Professionals</div>
+        <div class="trust-logos">
+            <div class="trust-logo">Keller Williams</div>
+            <div class="trust-logo">RE/MAX</div>
+            <div class="trust-logo">Coldwell Banker</div>
+            <div class="trust-logo">Century 21</div>
+            <div class="trust-logo">Berkshire Hathaway</div>
+        </div>
+    </div>
+    
+    <!-- Features Section -->
+    <div class="features-section">
+        <div class="features-container">
+            <h2 class="features-title">Your AI Real Estate Assistant</h2>
+            <p class="features-subtitle">Stop doing the same tasks over and over. Let AI handle the repetitive work so you can focus on closing deals.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Instant Lead Response</h3>
+                    <p class="feature-description">Respond to Zillow and Realtor.com leads within 60 seconds with personalized messages that convert.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">Smart Lead Qualification</h3>
+                    <p class="feature-description">Automatically qualify leads based on budget, timeline, and preferences before they hit your inbox.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🏠</div>
+                    <h3 class="feature-title">Auto-Send Listings</h3>
+                    <p class="feature-description">Send perfectly matched property listings before prospects even ask. They'll think you're a mind reader.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">Social Media Automation</h3>
+                    <p class="feature-description">Automatically post your listings to Facebook, Instagram, and LinkedIn with optimized captions.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3 class="feature-title">Follow-Up Sequences</h3>
+                    <p class="feature-description">Multi-touch follow-up campaigns that nurture leads until they're ready to buy or sell.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Performance Analytics</h3>
+                    <p class="feature-description">Track conversion rates, response times, and ROI with detailed analytics and insights.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- CTA Section -->
+    <div class="cta-section">
+        <div class="cta-container">
+            <h2 class="cta-title">Ready to 3x Your Lead Conversion?</h2>
+            <p class="cta-subtitle">Get your free automation guide and see exactly how top agents are using AI to dominate their market.</p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px;">
+                <div class="email-form">
+                    <h3 class="form-title">📋 Get Free Playbook</h3>
+                    <form action="https://formspree.io/f/xanjklyd" method="POST">
+                        <input type="email" name="email" class="email-input" placeholder="Enter your email address" required>
+                        <input type="hidden" name="vertical" value="real-estate">
+                        <button type="submit" class="cta-button">Get Free Guide</button>
+                    </form>
+                    <p style="font-size: 0.8rem; color: #666; margin-top: 10px;">No spam. Unsubscribe anytime.</p>
+                </div>
+                
+                <div class="email-form">
+                    <h3 class="form-title">📞 Let Us Build It For You</h3>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 20px;">90-minute strategy call + full automation setup</p>
+                    <div style="text-align: center; margin-bottom: 15px;">
+                        <span style="font-size: 1.8rem; font-weight: bold; color: #00d4aa;">$197</span>
+                        <span style="color: #666; text-decoration: line-through; margin-left: 10px;">$497</span>
+                    </div>
+                    <a href="https://calendly.com/zero-time-wasters" target="_blank" class="cta-button" style="display: block; text-decoration: none; text-align: center;">Book Your Call Now</a>
+                    <p style="font-size: 0.8rem; color: #666; margin-top: 10px;">Limited time offer</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <p class="footer-text">&copy; 2025 Zero Time Wasters AI Automation. Stop losing leads. Start winning deals.</p>
+    </div>
+</body>
+</html>
